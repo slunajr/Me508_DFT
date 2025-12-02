@@ -1,0 +1,46 @@
+&control
+   prefix = 'KVO3'
+   calculation = 'scf'
+   restart_mode = 'from_scratch'
+   wf_collect = .false.
+   tstress = .true.
+   tprnfor = .true.
+   outdir = './'
+   wfcdir = './'
+   pseudo_dir = './'
+/
+&system
+   ibrav = 0
+   nat = 5
+   ntyp = 3
+ !  nbnd = 5 !commented out on 11/29/25
+   ecutwfc = 60.0
+   ecutrho = 480
+/
+&electrons
+   electron_maxstep = 100
+   conv_thr = 1.0d-10
+   mixing_mode = 'plain'
+   mixing_beta = 0.7
+   mixing_ndim = 8
+   diagonalization = 'david'
+   diago_david_ndim = 4
+   diago_full_acc = .true.
+/
+CELL_PARAMETERS angstrom
+    3.96   0.0000000000   0.0000000000
+    0.0000000000   3.96   0.0000000000
+    0.0000000000   0.0000000000   3.96
+ATOMIC_SPECIES
+  V   50.9415  V.upf
+  K   39.098  K.upf
+  O   15.999  O.upf
+ATOMIC_POSITIONS angstrom
+  K       0.0     0.0     0.0
+  V       1.98     1.98     1.98
+  O       1.98     1.98     0.0
+  O       1.98     0.0     1.98
+  O       0.0     1.98    1.98
+
+K_POINTS automatic
+5 5 5 0 0 0
