@@ -1,0 +1,55 @@
+&control
+   prefix = 'Na2K2SnZrO6'
+   calculation = 'scf'
+   restart_mode = 'from_scratch'
+   wf_collect = .false.
+   tstress = .true.
+   tprnfor = .true.
+   outdir = './'
+   wfcdir = './'
+   pseudo_dir = './'
+/
+&system
+   ibrav = 0
+   nat = 12
+   ntyp = 5
+ !  nbnd = 5 !commented out on 11/29/25
+   ecutwfc = 60.0
+   ecutrho = 480
+/
+&electrons
+   electron_maxstep = 100
+   conv_thr = 1.0d-10
+   mixing_mode = 'plain'
+   mixing_beta = 0.7
+   mixing_ndim = 8
+   diagonalization = 'david'
+   diago_david_ndim = 4
+   diago_full_acc = .true.
+/
+CELL_PARAMETERS angstrom
+    5.953839097590731   0.0000000000   0.0000000000
+    0.0000000000   5.953839097590731   0.0000000000
+    0.0000000000   0.0000000000   5.953839097590731
+ATOMIC_SPECIES
+  Na  22.960  Na.upf
+  K   39.098  K.upf
+  Zr  91.224  Zr.upf
+  Sn  118.71  Sn.upf
+  O   15.999  O.upf
+ATOMIC_POSITIONS angstrom
+  K       0.0     0.0     0.0
+  Na       2.9769195487953652     2.9769195487953652     0.0
+  K       2.9769195487953652     0.0     2.9769195487953652
+  Na       0.0     2.9769195487953652     2.9769195487953652
+  Zr       1.4884597743976826     1.4884597743976826     1.4884597743976826
+  Sn       4.465379323193048     4.465379323193048     4.465379323193048
+  O       1.4884597743976826     0.0     0.0
+  O       4.465379323193048     0.0     0.0
+  O       0.0     1.4884597743976826     0.0
+  O       0.0     4.465379323193048     0.0
+  O       0.0     0.0     1.4884597743976826
+  O       0.0     0.0     4.465379323193048
+  
+K_POINTS automatic
+3 3 3 0 0 0
