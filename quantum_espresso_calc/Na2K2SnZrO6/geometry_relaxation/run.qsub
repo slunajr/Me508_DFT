@@ -1,0 +1,10 @@
+#!/bin/bash -l
+#$ -l h_rt=12:00:00
+#$ -P me508
+#$ -N Na2K2SnZrO6
+#$ -pe mpi_16_tasks_per_node 16
+
+module load openmpi/3.1.4_gnu-10.2.0
+module load quantumespresso/7.1
+
+mpirun -np 16 pw.x < geom.in &> geom.out

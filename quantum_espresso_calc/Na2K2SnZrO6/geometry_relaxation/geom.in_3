@@ -1,0 +1,63 @@
+&control
+   prefix = 'K4ZrSnO6'
+   calculation = 'vc-relax'
+   restart_mode = 'from_scratch'
+   wf_collect = .false.
+   tstress = .true.
+   tprnfor = .true.
+   outdir = './'
+   wfcdir = './'
+   pseudo_dir = './'
+   forc_conv_thr = 1.0D-5
+   nstep = 250
+/
+&system
+   ibrav = 0
+   nat = 12
+   ntyp = 5
+ !  nbnd = 5 !commented out on 11/29/25
+   ecutwfc = 60.0
+   ecutrho = 480
+/
+&electrons
+   electron_maxstep = 400
+   conv_thr = 1.0d-10
+   mixing_mode = 'plain'
+   mixing_beta = 0.7
+   mixing_ndim = 8
+   diagonalization = 'david'
+   diago_david_ndim = 4
+   diago_full_acc = .true.
+/
+&ions
+/
+
+&cell
+/
+CELL_PARAMETERS angstrom
+   6.645721704   0.071516410  -0.033024336
+   0.070375006   6.638595699   0.070375006
+  -0.033024336   0.071516410   6.645721704
+
+ATOMIC_SPECIES
+  Na  22.960  Na.upf
+  K   39.098  K.upf
+  Zr  91.224  Zr.upf
+  Sn  118.71  Sn.upf
+  O   15.999  O.upf
+ATOMIC_POSITIONS angstrom
+Na            0.0311724847        0.0355863553        0.0311724847
+K             3.3657128100        3.3675951683        0.0059308147
+Na            3.2942500736        0.1019302549        3.2942500736
+K             0.0059308147        3.3675951683        3.3657128100
+Sn            1.5182930150        1.4376344985        1.5182930150
+Zr            5.2664467124        5.3889831011        5.2664467124
+O             2.2459558865        0.1374753776        0.1056016003
+O             4.3968401257       -0.1325399654       -0.2125018515
+O             0.1775137147        2.2476519487        0.1775137147
+O            -0.1459982621        4.3880382399       -0.1459982621
+O             0.1056016003        0.1374753776        2.2459558865
+O            -0.2125018515       -0.1325399654        4.4968401257
+  
+K_POINTS automatic
+5 5 5 0 0 0
