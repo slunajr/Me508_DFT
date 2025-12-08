@@ -1,1 +1,1 @@
-
+To convert a quantum espresso geometry relaxation to cif files, place the cif.py file into onto some local directory. Place the output of the quantum espresso geometry relaxation into that same directory and rename it "geom.out". Call the cif.py within python and the geometry relaxed structure in the cif format will be created in the file "final_output.cif"
