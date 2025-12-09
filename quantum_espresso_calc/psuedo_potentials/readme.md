@@ -1,1 +1,1 @@
-
+This subdirectory contains psuedo potentials files used for the DFT calculations used within this project. These files were obtained from PsuedoDojo. These are PAW potentials with the PBE functoinals.
